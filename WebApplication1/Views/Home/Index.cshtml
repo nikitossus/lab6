@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+    <h4>Companies</h4>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td scope="col"><b>#</b></td>
+                <td scope="col"><b>Company Name</b></td>
+                <td scope="col"><b>Director</b></td>
+                <td scope="col"><b>Count of transportation</b></td>
+            </tr>
+        </thead>
+
+        @foreach (var c in ViewBag.Tb_Companies)
+        {
+            <tbody>
+                <tr>
+                    <td><p>@c.CompaniesId</p></td>
+                    <td><p>@c.CompName</p></td>
+                    <td><p>@c.Director</p></td>
+                    <td><p>@c.CountOfTransp</p></td>
+                </tr>
+            </tbody>
+
+        }
+    </table>
+
+    <h4>Transportation</h4>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td scope="col"><b>#</b></td>
+                <td scope="col"><b>Driver</b></td>
+                <td scope="col"><b>GoodsComp</b></td>
+                <td scope="col"><b>Distance</b></td>
+                <td scope="col"></td>
+            </tr>
+        </thead>
+
+        @foreach (var tr in ViewBag.Tb_Transportation)
+        {
+            <tbody>
+                <tr>
+                    <td><p>@tr.TransportationId</p></td>
+                    <td><p>@tr.DriverName</p></td>
+                    <td><p>@tr.GoodsComp</p></td>
+                    <td><p>@tr.Distance</p></td>
+                    <td><a href="/Home/Order/@tr.TransportationId"><input type="button" name="name" value="Order" /></a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <h4>Transport</h4>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td scope="col"><b>#</b></td>
+                <td scope="col"><b>CarBrand</b></td>
+                <td scope="col"><b>VehiclePlate</b></td>
+                <td scope="col"><b>CompaniesTRId</b></td>
+                <td scope="col"><b>TRansportationTRId</b></td>
+                <td scope="col"><b>Date of order</b></td>
+            </tr>
+        </thead>
+
+        @foreach (var tran in ViewBag.Tb_Transport)
+        {
+            <tbody>
+                <tr>
+                    <td><p>@tran.TransportId</p></td>
+                    <td><p>@tran.CarBrand</p></td>
+                    <td><p>@tran.VehiclePlate</p></td>
+                    <td><p>@tran.CompaniesTRId</p></td>
+                    <td><p>@tran.TRansportationTRId</p></td>
+                    <td><p>@tran.Date</p></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

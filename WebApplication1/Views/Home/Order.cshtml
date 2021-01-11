@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Order</h2>
+
+<body>
+    <div>
+        <h2>Order the car</h2>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.TRansportationTRId" name="TRansportationTRId" />
+            <table>
+                <tr>
+                    <td><p><h4>Input the Brand of car:</h4></p></td>
+                    <td><input type="text" name="CarBrand" /></td>
+                </tr>
+                <tr>
+                    <td><p><h4>Input the Vehicle Plate:</h4></p></td>
+                    <td><input type="text" name="VehiclePlate" /></td>
+                </tr>
+                <tr>
+                    <td><p><h4>Input the CompaniesTRId:</h4></p></td>
+                    <td><input type="number" name="CompaniesTRId" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Submit" /></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+
